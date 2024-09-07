@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from "./constants.js";
+import { ADD_TODO, ADD_USER, REMOVE_TODO, TOGGLE_TODO } from "./constants.js";
 
 
 //functions that return an action object are called action creators;
@@ -20,5 +20,12 @@ export function removeTodoCreator(todoId){
     return{
         type:TOGGLE_TODO,
         payload:todoId 
+    }
+}
+
+export function addUserActionCreator(user){
+    return {
+        type:ADD_USER,
+        payload:user
     }
 }

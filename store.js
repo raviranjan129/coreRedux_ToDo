@@ -1,7 +1,13 @@
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import todoReducer from "./todoReducer.js";
+import { userReducer } from "./userReducer.js";
 
-const store= createStore(todoReducer); // ToDo: add the relevant reducer;
+const rootReducer=combineReducers({
+    todosState:todoReducer,
+    usersState:userReducer
+})
+
+const store= createStore(rootReducer); // ToDo: add the relevant reducer;
 
 store.subscribe(()=>{
     console.log(store.getState())
